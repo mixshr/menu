@@ -1,9 +1,13 @@
 import React from 'react';
+import MenuItem from "./MenuItem";
 
-const Menu = ({title}) => {
-  return <div className='title'>
-    <h2>{title || 'Default title'}</h2>
-    <div className='underline'></div>
+const Menu = ({items}) => {
+  return <div className='section-center'>
+    {
+      items.map((item) => {
+        return <MenuItem key={item.id} {...item}/>
+      })
+    }
   </div>;
 };
 
